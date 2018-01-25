@@ -1,0 +1,22 @@
+{
+  "name": "apidoc",
+  "version": "1.0.0",
+  "description": "Platform for writing API specifications, code, and documentation all in one",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xkisu/apidoc.git"
+  },
+  "author": "Keith Mitchell <keith.mitchell@live.ca> (http://keithcod.es)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xkisu/apidoc/issues"
+  },
+  "homepage": "https://github.com/xkisu/apidoc#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}

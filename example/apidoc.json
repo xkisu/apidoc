@@ -1,0 +1,27 @@
+{
+    "name": "Example API",
+    "description": "This is an example API doc",
+    "routes": {
+        "root": {
+            "name": "Root",
+            "route": "/"
+        },
+        "params": {
+            "name": "Parameters",
+            "route": "/params/:name/:age",
+            "description": "An example route that include parameters.",
+            "parameters": {
+                "name": {
+                    "name": "Your Name",
+                    "slug": "name",
+                    "type": "string"
+                },
+                "age": {
+                    "name": "Your Age",
+                    "slug": "age",
+                    "type": "number"
+                }
+            }
+        }
+    }
+}
