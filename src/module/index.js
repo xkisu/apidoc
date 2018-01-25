@@ -34,9 +34,10 @@ class API {
                     }
                 })
             } else if (fs.existsSync(doc)) {
-                this.doc = fs.readFileSync(doc, {
+                var file = fs.readFileSync(doc, {
                     encoding: this.opts.encoding
                 });
+                this.doc = JSON.parse(file);
             } else if (jsonRegex.test(doc)) {
                 this.doc = JSON.parse(doc);
             } else {

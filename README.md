@@ -4,13 +4,14 @@ This is a work in progress! At this point, it is a concept with some rough code.
 
 Platform for writing API specifications, code, and documentation all in one file. 
 
-Write a single JSON file to generate API docs and easily create Express routes on the server side, and call the routes from the client side without having to repeat your route paths everywhere.
+Write a single JSON file to generate API docs and easily create Express routes on the server side, and call the routes from the client side without having to repeat your route paths everywhere. This makes it so you can easily update api specifications without breaking support and you only need to update them in a single file.
 
-The doc should allow for a wide range of configuration, including things like automatically including access token headers on certain routes without the app needed to set it on the required routes manually. 
+The doc should allow for a wide range of configuration, including things like automatically including access token headers on certain routes without the app needing to set it on the required routes manually. 
 
 Example Express code:
 ```JavaScript
 const APIDoc = require('apidoc')
+// first parameter points to the API doc, allows the doc being passed as a string, json string, json object, url, file path, or buffer. Default encoding is utf8
 const api = new APIDoc('./mydoc.json')
 
 const express = require('express')
