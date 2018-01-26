@@ -1,6 +1,21 @@
 {
     "name": "Example API",
     "description": "This is an example API doc",
+    "root": "/api",
+    "defaults": {
+        "returns": {
+            "OK": {
+                "code": 200
+            },
+            "ERR": {
+                "code": 400,
+                "template": {
+                    "code": "UNKNOWN_ERROR",
+                    "success": false
+                }
+            }
+        }
+    },
     "routes": {
         "root": {
             "name": "Root",
@@ -19,7 +34,17 @@
                 "age": {
                     "name": "Your Age",
                     "slug": "age",
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of years since you where born"
+                }
+            },
+            "returns": {
+                "MISSING": {
+                    "code": 301,
+                    "extends": "ERR",
+                    "template": {
+                        "code": "MISSING_PARAMETER"
+                    }
                 }
             }
         }
