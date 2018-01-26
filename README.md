@@ -8,6 +8,8 @@ Write a single JSON file to generate API docs and easily create Express routes o
 
 The doc should allow for a wide range of configuration, including things like automatically including access token headers on certain routes without the app needing to set it on the required routes manually. 
 
+Example API doc idea in `example/apidoc.json`
+
 Example Express code:
 ```JavaScript
 const APIDoc = require('apidoc')
