@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/xkisu/apidoc#readme",
   "dependencies": {
+    "json-lint": "^0.1.0",
     "request": "^2.83.0"
   },
   "devDependencies": {

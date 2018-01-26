@@ -1,6 +1,10 @@
 const fs = require('fs');
 const Buffer = require('buffer').Buffer;
+
 const request = require('request');
+
+const Linter = require('../common/linter.js');
+const Parser = require('../common/parser.js');
 
 const defaultOpts = {
 	encoding: 'utf8'
@@ -62,9 +66,19 @@ class API {
 			throw new Error('First parameter is not a url, json string, json object, file path, or buffer.');
 		}
 
-		//TODO: lint the doc
+		// TODO: lint the doc
+		this.linter = new Linter(this.doc);
 
-		
+		if(!this.linter.lint()) {
+			throw new Error('Linting of the API doc failed!');
+		}
+
+		this.parser = new Parser(this.doc);
+
+		if(!this.parser.verify()) {
+			throw new Error('Verification of the API doc failed!');
+		}
+
 	}
 }
 

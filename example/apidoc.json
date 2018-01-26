@@ -2,16 +2,23 @@
     "name": "Example API",
     "description": "This is an example API doc",
     "root": "/api",
+    "version": 1,
     "defaults": {
-        "returns": {
+        "responses": {
             "OK": {
                 "code": 200
             },
             "ERR": {
                 "code": 400,
                 "template": {
-                    "code": "UNKNOWN_ERROR",
-                    "success": false
+                    "code": {
+                        "type": "string",
+                        "default": "UNKNOWN_ERROR"
+                    },
+                    "success": {
+                        "type": "boolean",
+                        "default": false
+                    }
                 }
             }
         }
@@ -38,12 +45,14 @@
                     "description": "The number of years since you where born"
                 }
             },
-            "returns": {
+            "responses": {
                 "MISSING": {
                     "code": 301,
                     "extends": "ERR",
                     "template": {
-                        "code": "MISSING_PARAMETER"
+                        "code": {
+                            "default": "MISSING_PARAMETER"
+                        }
                     }
                 }
             }
