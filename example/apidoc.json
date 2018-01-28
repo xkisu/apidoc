@@ -35,14 +35,29 @@
             "parameters": {
                 "name": {
                     "name": "Your Name",
-                    "slug": "name",
                     "type": "string"
                 },
                 "age": {
                     "name": "Your Age",
-                    "slug": "age",
                     "type": "number",
                     "description": "The number of years since you where born"
+                }
+            },
+            "methods": {
+                "GET": {
+                    "responses": {
+                        "OK": {
+                            "code": 200, 
+                            "template": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "age": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
                 }
             },
             "responses": {
